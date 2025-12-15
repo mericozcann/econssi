@@ -21,32 +21,30 @@ Unlike traditional approaches that focus on short-horizon event prediction only,
 
 EconSSI follows a modular, physics-informed pipeline designed to track the **evolution of systemic fragility** rather than predicting single crash dates.
 
+## System Architecture (High-Level)
+
+EconSSI follows a modular, physics-informed pipeline designed to track the evolution of systemic fragility rather than predicting single crash dates.
+
 ```mermaid
 flowchart TD
-%% ===== Styles =====
-classDef data fill:#E3F2FD,stroke:#1E88E5,color:#0D47A1;
-classDef process fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20;
-classDef physics fill:#FFF3E0,stroke:#EF6C00,color:#E65100;
-classDef index fill:#F3E5F5,stroke:#6A1B9A,color:#4A148C;
-classDef model fill:#FCE4EC,stroke:#C2185B,color:#880E4F;
-classDef output fill:#ECEFF1,stroke:#455A64,color:#263238;
 
-A[Raw Market Data<br/>(Prices / Returns)]:::data
-B[Market Mode Extraction<br/>(Rolling Returns & Correlation Structure)]:::process
+A[Raw Market Data - Prices and Returns]
+B[Market Mode Extraction - Rolling Returns and Correlations]
 
-C1[Network Contagion<br/>(Correlation Networks, λ₁ Ratio)]:::physics
-C2[Critical Slowing Down<br/>(AR(1), Variance, Autocorrelation)]:::physics
-C3[Multifractality<br/>(MFDFA, ΔH)]:::physics
-C4[Herding Proxies<br/>(Ising / Spin-Glass)]:::physics
+C1[Network Contagion - Correlation Networks and Lambda1]
+C2[Critical Slowing Down - AR1 Variance Autocorrelation]
+C3[Multifractality - MFDFA and DeltaH]
+C4[Herding Proxies - Ising Spin Glass]
 
-D[Systemic Stress Index (SSI)<br/>Standardized Composite Indicator]:::index
+D[Systemic Stress Index SSI]
 
-E1[LSTM Forecasting<br/>SSI(t+H) & Crisis Probability]:::model
-E2[Agent-Based Modeling<br/>Liquidity Shock Simulation]:::model
+E1[LSTM Forecasting - Future SSI and Crisis Probability]
+E2[Agent Based Modeling - Liquidity Shock Simulation]
 
-F[Monitoring & Decision Support<br/>(Dashboard & Early-Warning)]:::output
+F[Monitoring and Decision Support - Dashboard and Early Warning]
 
 A --> B
+
 B --> C1
 B --> C2
 B --> C3
