@@ -21,32 +21,44 @@ Unlike traditional approaches that focus on short-horizon event prediction only,
 
 EconSSI follows a modular, physics-informed pipeline designed to track the **evolution of systemic fragility** rather than predicting single crash dates.
 
-Raw Market Data (Prices / Returns)
-│
-▼
-Market Mode Extraction
-(Rolling Returns & Correlation Structure)
-│
-▼
-Physics-Informed Feature Layers
-├─ Network Contagion (Correlation Networks, λ₁ Ratio)
-├─ Critical Slowing Down (AR(1), Variance, Autocorrelation)
-├─ Multifractality (MFDFA, ΔH)
-├─ Herding Proxies (Ising / Spin-Glass Indicators)
-│
-▼
-Systemic Stress Index (SSI)
-(Standardized & Interpretable Composite Indicator)
-│
-▼
-Forecasting & Simulation Layer
-├─ LSTM (SSI Regression + Crisis Probability Classification)
-└─ Agent-Based Liquidity Shock Simulations
-│
-▼
-Monitoring & Decision Support
-(Dashboard, Early-Warning Signals, Risk Interpretation)
-
+```text
+┌───────────────────────────────────────────────┐
+│ Raw Market Data (Prices / Returns)            │
+└───────────────────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ Market Mode Extraction                         │
+│ (Rolling Returns & Correlation Structure)      │
+└───────────────────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────┬────────────────────────────────┐
+│ Physics-Informed Feature      │ Forecasting & Simulation        │
+│ Layers                        │ Layer                          │
+│                               │                                │
+│ • Network Contagion           │ • LSTM                          │
+│   (Correlation Nets, λ₁)      │   (SSI Regression +             │
+│ • Critical Slowing Down       │    Crisis Probability)          │
+│   (AR(1), Var, ACF)           │ • Agent-Based Modeling (ABM)    │
+│ • Multifractality             │   (Liquidity Shocks)            │
+│   (MFDFA, ΔH)                 │                                │
+│ • Herding Proxies             │                                │
+│   (Ising / Spin-Glass)        │                                │
+└───────────────────────────────┴────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ Systemic Stress Index (SSI)                    │
+│ (Standardized & Interpretable Composite)       │
+└───────────────────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ Monitoring & Decision Support                  │
+│ (Dashboard, Early-Warning, Risk Interpretation)│
+└───────────────────────────────────────────────┘
+```
 This architecture prioritizes **regime detection and stress accumulation** over short-horizon crash timing.
 
 ---
