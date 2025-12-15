@@ -105,7 +105,7 @@ Open:
 
 ## License
 
-Released under the **MIT License**. You may use, modify, and distribute with attribution.
+You may use, modify, and distribute with attribution.
 
 ---
 
