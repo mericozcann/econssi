@@ -19,10 +19,6 @@ Unlike traditional approaches that focus on short-horizon event prediction only,
 
 ## System Architecture (High-Level)
 
-EconSSI follows a modular, physics-informed pipeline designed to track the **evolution of systemic fragility** rather than predicting single crash dates.
-
-## System Architecture (High-Level)
-
 EconSSI follows a modular, physics-informed pipeline designed to track the evolution of systemic fragility rather than predicting single crash dates.
 
 ```mermaid
